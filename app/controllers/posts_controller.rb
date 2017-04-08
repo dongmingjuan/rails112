@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to group_path(@group), notice: "Update success!"
+      redirect_to account_posts_path, notice: "Update success!"
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @post.destroy
-    redirect_to group_path(@group), alert: "Post deleted"
+    redirect_to account_posts_path, alert: "Post deleted"
   end
 
 
